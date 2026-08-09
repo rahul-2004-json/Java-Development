@@ -1,0 +1,36 @@
+Java JDK is a collection of tools that allow us to develop application with Java as programming language
+
+Java developed by Sun microsystem
+Java was made as an open source project and came to be known as OpenJDK
+
+There are list of many JDKs available in market but they have baseline referrence to Open JDK 
+- Addon functionality is provided over this open JDK 
+For example:
+
+Oracle JDK: The official commercial build from Oracle.
+Eclipse Temurin (formerly AdoptOpenJDK): A highly popular, community-driven distribution.
+Amazon Corretto: Optimized and supported by Amazon for AWS web services.
+Microsoft Build of OpenJDK: Microsoft's binaries for Azure and Windows ecosystems.
+Azul Zulu: Commercial and free builds focused on high performance.
+BellSoft Liberica JDK: Open-source builds that serve as the default for many cloud engines.
+Other Enterprise Builds: Including IBM Semeru, Red Hat OpenJDK, Alibaba Dragonwell, and SapMachine.
+
+
+What are binaries?
+Binaries = compiled programs that a computer can run.
+
+Source code → 🔨 Compiler → Binary (machine code) → 💻 CPU runs it
+program.c → compiled → program.exe
+
+When someone says "install the binary", they usually mean the ready-to-run compiled version of the software.
+
+
+What is JAVA_HOME variable ?
+This JAVA_HOME variable is set as environment variable and it stores the location where the Java is installed
+
+Why do we need JAVA_HOME variable?
+Tools like Maven, Gradle, Jenkins, IDEs: They often use JAVA_HOME to know which JDK installation to use.
+
+
+Java is compiled or interpreted ?
+Both 

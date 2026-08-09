@@ -1,0 +1,87 @@
+
+JDK installation consists of       
+1. JRE -> Java runtime environment 
+2. JVM -> Java virtual machine
+
+JDK Consists of -> JRE consists of -> JVM
+
+
+
+JDK : Everything you need to develop Java programs
+It contains things like:
+-javac → Java compiler
+-java → launches/runs Java programs
+-JRE-related components
+-debugging and development tools
+
+
+JRE = Everything needed to run Java applications
+JRE = JVM + Java libraries + runtime components
+
+
+JVM : Actual engine that runs Java bytecode
+Takes .class bytecode and executes it on your operating system/CPU
+
+.class files are platform independent files , these files can run on any machine that have JVM 
+
+
+Who makes .class files ?
+javac -> compiles .java code to .class bytecode 
+
+
+What is interpreting and compiling?
+These are two ways for code to run
+
+- Interpreting ->  Executing a code one line at a time 
+                   Read one line -> transalte it to machine code -> run it -> forget it 
+                   If this line gets repeated in a loop -> it will get translated to machine code everytime -> no memory for previous translations
+
+        
+        def greet():
+            print("Hello")
+            print("How are you")
+
+        print("Start")
+        greet()
+        print("End")
+
+
+Line-by-line interpreter flow:
+1.Interpreter reads def greet(): → sees it's a function definition → stores the function (name greet, and its body) in memory. Does not run print("Hello") or print("How are you") yet. Just moves on.
+2.Interpreter reaches print("Start") → this is real top-level code → executes immediately → prints Start
+3.Interpreter reaches greet() → this is a call → now it jumps into the stored function body → runs print("Hello") → runs print("How are you") → function ends → jumps back to where it was called from
+4.Interpreter reaches print("End") → executes → prints End
+
+
+
+
+- Compilation -> translating your entire source code into machine code (or some lower-level code) before the program ever runs. 
+                 You get a separate output file, and that file is what actually executes
+
+
+
+
+
+
+JIT — Just-In-Time Compiler : It is a middle ground between both interpreter and compiler 
+1.Program starts running as interpreted (line by line). 
+2.While it's running, the JIT watches which parts of the code are being executed a lot (called "hot" code — e.g. a loop that runs 10,000 times). 
+3.Once it spots hot code, it compiles just that part into fast machine code, on the fly, "just in time," and swaps it in.
+4.Cold code (run once or twice) stays interpreted — no point wasting time compiling it.
+5.Done by the JVM's JIT compiler
+
+
+
+Flow of running a Java code?
+1. Write code and save as .java
+2. javac <filename>.java  -> compile the .java  file to   .class (bytecode : this is not native machine level code for CPU)
+3. bytecode instruction file are understandable by JVM only
+4. bytecode file is interpreted line by line by JVM and converted to machine code and run 
+5. during interpretation code that repeats the most is converted to machine code by JIT and replaced , thereafter machine code is always used instead of interpreting it again
+
+
+Why not just compile directly to machine code?
+Because Java's bytecode is designed to be platform-independent.
+
+
+Java isn't simply an "interpreted language." It's a combination of bytecode compilation + interpretation + JIT compilation
